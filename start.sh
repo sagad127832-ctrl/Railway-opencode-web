@@ -10,7 +10,7 @@ if [ ! -f "$DB_PATH" ]; then
     filebrowser -d "$DB_PATH" config set --root /srv --address 0.0.0.0 --port "$FILEBROWSER_PORT"
 
     FB_USER="${FILEBROWSER_USER:-admin}"
-    FB_PASS="${FILEBROWSER_PASSWORD:-adminadmin123}"
+    FB_PASS="${FILEBROWSER_PASSWORD:-admin}"
     filebrowser -d "$DB_PATH" users add "$FB_USER" "$FB_PASS" --perm.admin
 fi
 
