@@ -16,7 +16,7 @@ fi
 
 # Start FileBrowser
 echo "==> Starting FileBrowser on port $FILEBROWSER_PORT"
-filebrowser -d "$DB_PATH" --root /srv --address 0.0.0.0 --port "$FILEBROWSER_PORT" &
+filebrowser -d "$DB_PATH" --root / --address 0.0.0.0 --port "$FILEBROWSER_PORT" &
 
 # IMPORTANT: cd into /srv so OpenCode's project picker starts there
 cd /srv
