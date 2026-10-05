@@ -14,12 +14,10 @@ ENV PATH="/root/.opencode/bin:${PATH}"
 # Install FileBrowser (corrected URL)
 RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 
-# Set up FileBrowser directory and database
-RUN mkdir -p /srv && \
-    filebrowser config init --database /database.db && \
-    filebrowser config set --root /srv --address 0.0.0.0 --port 8080
+# Create the workspace directory (Railway volume will be mounted here)
+RUN mkdir -p /srv
 
-# Create a start script to run both services
+# Copy and prepare the start script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
