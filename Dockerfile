@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y \
 RUN curl -fsSL https://opencode.ai/install | bash
 ENV PATH="/root/.opencode/bin:${PATH}"
 
-# Install FileBrowser (latest version)
-RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/filebrowser/master/get.sh | bash
+# Install FileBrowser (corrected URL)
+RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 
 # Set up FileBrowser directory and database
 RUN mkdir -p /srv && \
